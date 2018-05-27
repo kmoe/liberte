@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+set -x
+
 # Parameter:
 #   + (none):  build and install main and kexec kernels
 #   + prepare: prepare main kernel for building external modules
@@ -36,7 +38,7 @@ fwpath=/usr/local/addons/shipped-fw
 
 # Make options
 makeopts=`portageq envvar MAKEOPTS`
-rmake="make -s ${makeopts} -C ${kernsrc} ${bver} ${bts} ${buser} ${bhost}"
+rmake="make ${makeopts} -C ${kernsrc} ${bver} ${bts} ${buser} ${bhost}"
 make="sudo -n -u bin ${rmake}"
 
 

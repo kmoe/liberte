@@ -12,12 +12,11 @@ export LESSHISTFILE=-
 LESS="${LESS} --shift 16 -Swi -x4"
 
 # Build-time environment variables
-# e.g.: kversion  = 3.14.5-hardened-r2
-#       hsversion = 3.14.5-r2 (contents of config/kversion)
+# e.g.: kversion  = 3.14.5-gentoo
+#       hsversion = 3.14.5 (contents of config/kversion)
 export helpdir=${HOME}/helpers
 export hsversion=`cat ${HOME}/config/kversion`
-export kversion=${hsversion/-/-hardened-}
-[ ${kversion} != ${hsversion} ] || kversion=${hsversion}-hardened
+export kversion=${hsversion}-gentoo
 
 # Build-time aliases
 alias kconfmain="sudo -u bin make -C /usr/src/linux O=/usr/src/linux-main menuconfig"

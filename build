@@ -1,5 +1,9 @@
 #!/bin/sh -e
 
+set -x
+
+set -v
+
 sinfo() {
     echo ${BASH:+-e} "\033[1;37;43m$@\033[0m"
 }

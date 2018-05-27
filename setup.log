@@ -1,0 +1,297 @@
+[1;33;41mCopying configuration files:[0m
+>f.st...... etc/hosts
+>f.st...... etc/man.conf
+>f.st...... etc/rc.conf
+>f..t...... etc/conf.d/cabled
+>f.st...... etc/conf.d/consolefont
+>f.st...... etc/conf.d/dmesg
+>f..t...... etc/conf.d/haveged
+>f..t...... etc/conf.d/hostname
+>f.st...... etc/conf.d/hwclock
+>f.st...... etc/conf.d/iptables
+>f.st...... etc/conf.d/keymaps
+>f..t...... etc/conf.d/liberte
+>f.st...... etc/conf.d/localmount
+>f..t...... etc/conf.d/metalog
+>f.st...... etc/conf.d/modules
+>f..t...... etc/conf.d/mount-ro
+>f..t...... etc/conf.d/smartd
+>f.st...... etc/portage/package.accept_keywords
+>f.st...... etc/security/namespace.conf
+>f.stp..... sysctl.conf
+>f..t...... resolv.conf
+[1;33;41mMounting system directories[0m
+[1;33;41mEnvironment:[0m
+    LVERSION=2014.07
+    LOGNAME=root
+    USER=root
+    HOME=/root
+    HOSTNAME=liberte
+    LANG=en_GB.UTF-8
+    TERM=rxvt-unicode-256color
+    PHASE=src
+[1;33;41mLaunching chrooted shell in /home/root/gentoobuild/src[0m
+>>> Regenerating /etc/ld.so.cache...
+[1;33;41mSetting default x86 profile[0m
+[1;33;41mApplying temporary portage patches[0m
+[1;33;41myolo 2[0m
+[1;33;41mSkipping full rebuild (use "fresh")[0m
+[1;33;41mListing updates[0m
+[1;33;41mCompiling world[0m
+No news is good news.
+[1;33;41mRemoving unnecessary packages[0m
+[1;33;41mPerforming package move updates[0m
+[1;33;41mUpdating Perl modules[0m
+
+***************************************************************************
+You are supplying additional command line options for the package manager.
+This is NOT RECOMMENDED, not tested, and may lead to incorrect, incomplete,
+confusing, and/or nonfunctional results. You are on your own now.
+***************************************************************************
+
+
+
+ [32;01m*[0m Beginning a clean up of .ph files
+ [32;01m*[0m Excluding files for 5.24.3 and 5.24.3/i686-linux from cleaning
+
+ [32;01m*[0m Locating ph files for removal
+
+ [32;01m*[0m Locating packages for an update
+ [32;01m*[0m No package needs to be reinstalled.
+[1;33;41mRebuilding packages that use old libraries[0m
+[1;33;41mChecking linking consistency[0m
+Scanning Configuration files...
+Exiting: Nothing left to do; exiting. :)
+[1;33;41mListing GLSAs[0m
+[1;33;41mCreating eix database[0m
+[1;33;41mCompiling custom executables[0m
+[1;33;41mGenerating localization, timezone and keyboard layout menus[0m
+[1;33;41mFixing miscellaneous directory permissions[0m
+[1;33;41mSetting dash as POSIX shell[0m
+[1;33;41mConfiguring fontconfig[0m
+[1;33;41mConfiguring Mesa and OpenGL[0m
+[1;33;41mRefreshing trusted certificates list[0m
+Clearing symlinks in /etc/ssl/certs...
+done.
+Updating certificates in /etc/ssl/certs...
+133 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+[1;33;41mGenerating /etc/issue[0m
+[1;33;41mPatching init scripts[0m
+Ignoring potentially dangerous file name /etc/inittab
+The text leading up to this was:
+--------------------------
+|--- /etc/inittab	2011-05-05 13:02:21.000000000 +0000
+|+++ /etc/inittab.new	2011-05-05 13:03:20.000000000 +0000
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+2 out of 2 hunks ignored
+Failed to apply patch: /root/patches/inittab.patch
+Ignoring potentially dangerous file name /etc/pam.d/system-auth
+The text leading up to this was:
+--------------------------
+|--- /etc/pam.d/system-auth	2012-02-09 00:27:23.000000000 +0000
+|+++ /etc/pam.d/system-auth.new	2012-03-10 20:49:42.000000000 +0000
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+1 out of 1 hunk ignored
+Failed to apply patch: /root/patches/system-auth.patch
+The text leading up to this was:
+--------------------------
+|--- /etc/init.d/autofs	2012-03-12 02:00:55.000000000 +0000
+|+++ /etc/init.d/autofs.new	2012-03-13 18:41:32.000000000 +0000
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+1 out of 1 hunk ignored
+Failed to apply patch: /root/patches/autofs.patch
+Ignoring potentially dangerous file name /etc/init.d/iptables
+The text leading up to this was:
+--------------------------
+|--- /etc/init.d/iptables	2010-03-14 15:00:30.000000000 +0000
+|+++ /etc/init.d/iptables.new	2010-03-14 15:00:51.000000000 +0000
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+1 out of 1 hunk ignored
+Failed to apply patch: /root/patches/iptables.patch
+[1;33;41mConfiguring start-up services[0m
+[1;33;41mInitializing /run[0m
+[1;33;41mDisabling non-rotating logs[0m
+[1;33;41mReplacing laptop-mode drive-waking hdparm calls[0m
+[1;33;41mSetting up users[0m
+[1;33;41mMinimizing SUID bits in favor of POSIX.1e capabilities[0m
+[1;33;41mDisabling PaX markings[0m
+[1;33;41mInitializing a secondary PGP keyring[0m
+[1;33;41mCreating dconf databases[0m
+[1;33;41mGenerating Secure Boot test certificates[0m
+[1;33;41mBuilding kernel modules[0m
+[1;33;41mCreating initramfs image[0m
+[1;33;41mBuilding main and KEXEC kernels[0m
+[1;33;41mVerifying XZ decompression memory requirements[0m
+[1;33;41mKernel config differences:[0m
+[1;33;41mKexec kernel config differences:[0m
+[1;33;41mUnknown missing firmwares:[0m
+unneeded: 3com/typhoon.bin
+unneeded: acenic/tg1.bin
+unneeded: acenic/tg2.bin
+unneeded: adaptec/starfire_rx.bin
+unneeded: adaptec/starfire_tx.bin
+unneeded: agere_ap_fw.bin
+unneeded: agere_sta_fw.bin
+unneeded: ar5523.bin
+unneeded: ath10k/QCA988X/hw2.0/board.bin
+unneeded: ath10k/QCA988X/hw2.0/firmware.bin
+unneeded: ath10k/QCA988X/hw2.0/otp.bin
+unneeded: ath3k-1.fw
+unneeded: bfubase.frm
+unneeded: bnx2/bnx2-mips-06-6.2.3.fw
+unneeded: bnx2/bnx2-mips-09-6.2.1b.fw
+unneeded: bnx2/bnx2-rv2p-06-6.0.15.fw
+unneeded: bnx2/bnx2-rv2p-09-6.0.17.fw
+unneeded: bnx2/bnx2-rv2p-09ax-6.0.17.fw
+unneeded: brcm/bcm43xx-0.fw
+unneeded: brcm/bcm43xx_hdr-0.fw
+unneeded: brcm/brcmfmac43143.bin
+unneeded: brcm/brcmfmac43236b.bin
+unneeded: brcm/brcmfmac43242a.bin
+unneeded: BT3CPCC.bin
+unneeded: carl9170-1.fw
+unneeded: cis/3CCFEM556.cis
+unneeded: cis/3CXEM556.cis
+unneeded: cis/COMpad2.cis
+unneeded: cis/COMpad4.cis
+unneeded: cis/DP83903.cis
+unneeded: cis/MT5634ZLX.cis
+unneeded: cis/PCMLM28.cis
+unneeded: cis/RS-COM-2P.cis
+unneeded: cis/SW_555_SER.cis
+unneeded: cis/SW_7xx_SER.cis
+unneeded: cis/SW_8xx_SER.cis
+unneeded: ctefx.bin
+unneeded: dvb-fe-xc5000-1.6.114.fw
+unneeded: dvb-fe-xc5000c-4.1.30.7.fw
+unneeded: e100/d101m_ucode.bin
+unneeded: e100/d101s_ucode.bin
+unneeded: e100/d102e_ucode.bin
+unneeded: ene-ub6250/ms_init.bin
+unneeded: ene-ub6250/msp_rdwr.bin
+unneeded: ene-ub6250/ms_rdwr.bin
+unneeded: ene-ub6250/sd_init1.bin
+unneeded: ene-ub6250/sd_init2.bin
+unneeded: ene-ub6250/sd_rdwr.bin
+unneeded: htc_7010.fw
+unneeded: htc_9271.fw
+unneeded: iwlwifi-1000-5.ucode
+unneeded: iwlwifi-100-5.ucode
+unneeded: iwlwifi-105-6.ucode
+unneeded: iwlwifi-135-6.ucode
+unneeded: iwlwifi-2000-6.ucode
+unneeded: iwlwifi-2030-6.ucode
+unneeded: iwlwifi-3160-9.ucode
+unneeded: iwlwifi-3945-2.ucode
+unneeded: iwlwifi-4965-2.ucode
+unneeded: iwlwifi-5000-5.ucode
+unneeded: iwlwifi-5150-2.ucode
+unneeded: iwlwifi-6000-4.ucode
+unneeded: iwlwifi-6000g2a-6.ucode
+unneeded: iwlwifi-6000g2b-6.ucode
+unneeded: iwlwifi-6050-5.ucode
+unneeded: iwlwifi-7260-9.ucode
+unneeded: iwlwifi-7265-9.ucode
+unneeded: iwlwifi-8000-8.ucode
+unneeded: kaweth/new_code.bin
+unneeded: kaweth/new_code_fix.bin
+unneeded: kaweth/trigger_code.bin
+unneeded: kaweth/trigger_code_fix.bin
+unneeded: matrox/g200_warp.fw
+unneeded: matrox/g400_warp.fw
+unneeded: mrvl/pcie8766_uapsta.bin
+unneeded: mrvl/pcie8897_uapsta.bin
+unneeded: mrvl/usb8797_uapsta.bin
+unneeded: mrvl/usb8897_uapsta.bin
+unneeded: mwl8k/fmimage_8363.fw
+unneeded: mwl8k/fmimage_8366_ap-3.fw
+unneeded: mwl8k/fmimage_8366.fw
+unneeded: mwl8k/fmimage_8687.fw
+unneeded: mwl8k/helper_8363.fw
+unneeded: mwl8k/helper_8366.fw
+unneeded: mwl8k/helper_8687.fw
+unneeded: prism_ap_fw.bin
+unneeded: prism_sta_fw.bin
+unneeded: r128/r128_cce.bin
+unneeded: radeon/R100_cp.bin
+unneeded: radeon/R200_cp.bin
+unneeded: radeon/R300_cp.bin
+unneeded: radeon/R420_cp.bin
+unneeded: radeon/R520_cp.bin
+unneeded: radeon/R600_me.bin
+unneeded: radeon/R600_pfp.bin
+unneeded: radeon/RS600_cp.bin
+unneeded: radeon/RS690_cp.bin
+unneeded: radeon/RS780_me.bin
+unneeded: radeon/RS780_pfp.bin
+unneeded: radeon/RV610_me.bin
+unneeded: radeon/RV610_pfp.bin
+unneeded: radeon/RV620_me.bin
+unneeded: radeon/RV620_pfp.bin
+unneeded: radeon/RV630_me.bin
+unneeded: radeon/RV630_pfp.bin
+unneeded: radeon/RV635_me.bin
+unneeded: radeon/RV635_pfp.bin
+unneeded: radeon/RV670_me.bin
+unneeded: radeon/RV670_pfp.bin
+unneeded: radeon/RV710_me.bin
+unneeded: radeon/RV710_pfp.bin
+unneeded: radeon/RV730_me.bin
+unneeded: radeon/RV730_pfp.bin
+unneeded: radeon/RV770_me.bin
+unneeded: radeon/RV770_pfp.bin
+unneeded: rt2561.bin
+unneeded: rt2561s.bin
+unneeded: rt2661.bin
+unneeded: rt2860.bin
+unneeded: rt2870.bin
+unneeded: rt73.bin
+unneeded: rtl_nic/rtl8105e-1.fw
+unneeded: rtl_nic/rtl8106e-1.fw
+unneeded: rtl_nic/rtl8106e-2.fw
+unneeded: rtl_nic/rtl8168d-1.fw
+unneeded: rtl_nic/rtl8168d-2.fw
+unneeded: rtl_nic/rtl8168e-1.fw
+unneeded: rtl_nic/rtl8168e-2.fw
+unneeded: rtl_nic/rtl8168e-3.fw
+unneeded: rtl_nic/rtl8168f-1.fw
+unneeded: rtl_nic/rtl8168f-2.fw
+unneeded: rtl_nic/rtl8168g-2.fw
+unneeded: rtl_nic/rtl8168g-3.fw
+unneeded: rtl_nic/rtl8402-1.fw
+unneeded: rtl_nic/rtl8411-1.fw
+unneeded: rtl_nic/rtl8411-2.fw
+unneeded: rtlwifi/rtl8188efw.bin
+unneeded: rtlwifi/rtl8192cfw.bin
+unneeded: rtlwifi/rtl8192cfwU_B.bin
+unneeded: rtlwifi/rtl8192cfwU.bin
+unneeded: rtlwifi/rtl8192cufw_A.bin
+unneeded: rtlwifi/rtl8192cufw_B.bin
+unneeded: rtlwifi/rtl8192cufw.bin
+unneeded: rtlwifi/rtl8192cufw_TMSC.bin
+unneeded: rtlwifi/rtl8192defw.bin
+unneeded: rtlwifi/rtl8192sefw.bin
+unneeded: rtlwifi/rtl8723befw.bin
+unneeded: rtlwifi/rtl8723fw_B.bin
+unneeded: rtlwifi/rtl8723fw.bin
+unneeded: symbol_sp24t_prim_fw
+unneeded: symbol_sp24t_sec_fw
+unneeded: tigon/tg3.bin
+unneeded: tigon/tg3_tso5.bin
+unneeded: tigon/tg3_tso.bin
+unneeded: xc3028L-v36.fw
+unneeded: xc3028-v27.fw
+[1;33;41mGenerating SYSLINUX configuration[0m
+[1;33;41mGenerating EFI GRUB configuration[0m
+[1;33;41mDone.[0m
+[1;33;41mUnmounting system directories[0m

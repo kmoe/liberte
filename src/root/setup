@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+set -x
+
 xzmem=20
 protected="/etc/._cfg????_locale.gen"
 
@@ -21,10 +23,11 @@ if [ ${PHASE} != src ]; then
 fi
 
 
-sinfo "Setting a hardened profile"
-eselect profile set hardened/linux/x86
+sinfo "Setting default x86 profile"
+eselect profile set default/linux/x86/17.0
 
-echo ">sys-kernel/hardened-sources-${hsversion}" > /etc/portage/package.mask/kernel
+# echo ">sys-kernel/gentoo-sources-${hsversion}" > /etc/portage/package.mask/kernel
+echo "~sys-kernel/gentoo-sources-${hsversion}" >> /etc/portage/package.accept_keywords
 rm -f /etc/portage/savedconfig/*/*-[0-9]*
 
 
@@ -37,9 +40,11 @@ fi
 
 
 sinfo "Applying temporary portage patches"
+# TODO check if still needed
+sinfo "yolo 2"
 # (#424816)
-patch_ebuild ${HOME}/patches/portage/virtualbox-guest-additions.patch
-patch_ebuild ${HOME}/patches/portage/xf86-video-virtualbox.patch
+# patch_ebuild ${HOME}/patches/portage/virtualbox-guest-additions.patch
+# patch_ebuild ${HOME}/patches/portage/xf86-video-virtualbox.patch
 # (virtualbox-modules is in package.provided)
 groupadd -f -r vboxusers
 
@@ -54,7 +59,8 @@ if [ "$1" = fresh  -o  ! -e /usr/src/linux-${kversion}/incremental ]; then
     #                  emerge -q @module-rebuild
     sinfo "Downloading kernel ${kversion}"
     rm -rf /usr/src/linux-${kversion} /lib/modules
-    emerge -q =sys-kernel/hardened-sources-${hsversion}
+    emerge =sys-kernel/gentoo-sources-${hsversion}
+    # emerge --ask sys-kernel/gentoo-sources
 
 
     sinfo "Preparing kernel build environments"
@@ -69,7 +75,9 @@ if [ "$1" = fresh  -o  ! -e /usr/src/linux-${kversion}/incremental ]; then
 
     # https://git.kernel.org/cgit/linux/kernel/git/mszeredi/vfs.git/diff/?id=overlayfs.v22&id2=4b660a7f5c8099d88d1a43d8ae138965112592c7
     sinfo "Applying kernel patches"
-    ${helpdir}/hlp-patch ${HOME}/patches/kernel/overlayfs.v22.patch  -d /usr/src/linux-${kversion} -p1
+    sinfo "overlayfs is mainline now w00t"
+    # TODO check if any of this is still needed
+    # ${helpdir}/hlp-patch ${HOME}/patches/kernel/overlayfs.v22.patch  -d /usr/src/linux-${kversion} -p1
 
 
     # Some news are delayed until first emerge
