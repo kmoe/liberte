@@ -1,10 +1,7 @@
 # Firmware
 
 # CPUs
-sys-apps/microcode-data
-
-# GPUs
-x11-drivers/radeon-ucode
+sys-firmware/intel-microcode
 
 # Wi-Fi
 sys-firmware/b43-firmware

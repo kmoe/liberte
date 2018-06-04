@@ -64,9 +64,6 @@ Plugin {
             id=/usr/share/applications/firefox.desktop
         }
         Button {
-            id=/usr/share/applications/claws-mail.desktop
-        }
-        Button {
             id=/usr/share/applications/sakura.desktop
         }
     }

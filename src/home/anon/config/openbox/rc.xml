@@ -315,15 +315,6 @@
         <command>lxrandr</command>
       </action>
     </keybind>
-    <keybind key="XF86Mail">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Email</name>
-        </startupnotify>
-        <command>claws-mail</command>
-      </action>
-    </keybind>
     <keybind key="XF86WWW">
       <action name="Execute">
         <startupnotify>

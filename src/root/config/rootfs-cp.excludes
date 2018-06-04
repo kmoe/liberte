@@ -22,7 +22,6 @@
 /usr/share/sgml/docbook/xsl-stylesheets/
 
 # Pruned directories
-/usr/share/claws-mail/themes/**
 /usr/share/icons/HighContrast/
 
 # Executables requiring development libraries

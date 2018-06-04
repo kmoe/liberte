@@ -17,19 +17,6 @@
 /config/firefox/profile.anon/compatibility.ini
 /config/firefox/profile.anon/pluginreg.dat
 
-# Mail
-/config/claws-mail/menurc
-/config/claws-mail/*.bak
-/config/claws-mail/addrbook/*.bak
-/config/claws-mail/*_history
-/config/claws-mail/*.log
-/config/claws-mail/tmp/
-/config/claws-mail/mimetmp/
-/config/claws-mail/tempfolder/
-/config/claws-mail/*cache/
-/config/claws-mail/claws-mail-[0-9]*
-/config/claws-mail/tagsdb/
-
 # Instant messaging
 /config/hexchat/scrollback/
 

@@ -23,7 +23,7 @@ app-text/poppler                cairo
 # [xf86-video-ati[glamor] requires mesa[egl,gbm]]
 # [xf86-video-vmware requires mesa[xa]]
 # [xf86-video-virtualbox[dri] conflicts w/ mprotect]
-media-libs/mesa                 xa gbm -llvm
+media-libs/mesa                 xa gbm
 x11-libs/libdrm                 libkms
 x11-drivers/xf86-video-virtualbox -dri
 app-emulation/open-vm-tools     -X
@@ -42,10 +42,11 @@ net-libs/glib-networking        -gnome
 # Multimedia
 # [ffmpeg/libav: encode-only flags: mp3 aac faac fdk theora vorbis x264 xvid]
 virtual/ffmpeg                  -X -encode -truetype
-media-video/libav               -X -encode -truetype -alsa -network -ssl  -hardcoded-tables  -v4l
+# libav conflicts with ffmpeg
+# media-video/libav               -X -encode -truetype -alsa -network -ssl  -hardcoded-tables  -v4l
 media-sound/sox                 encode
 media-sound/vorbis-tools        speex
-media-plugins/gst-plugins-meta  dv lame theora vpx x264 xvid  a52 dts dvd libass mms mpeg  ffmpeg
+media-plugins/gst-plugins-meta  dv lame vpx x264 xvid  a52 dts dvd libass mms mpeg  ffmpeg
 www-client/firefox              -alsa gstreamer  system-jpeg system-cairo system-sqlite system-icu  -wifi
 media-libs/libass               -harfbuzz
 media-gfx/graphicsmagick        -truetype
@@ -87,17 +88,19 @@ sys-kernel/linux-firmware       savedconfig
 sys-devel/gcc                   cxx
 sys-devel/binutils              cxx
 www-client/firefox              custom-cflags custom-optimization
-media-video/libav               custom-cflags cpudetection 3dnow 3dnowext ssse3 avx
+#media-video/libav               custom-cflags cpudetection 3dnow 3dnowext ssse3 avx
 sys-fs/udev                     gudev
 gnome-base/librsvg              tools
 dev-util/strace                 aio
 app-portage/eix                 strong-security
 dev-db/sqlite                   secure-delete
-dev-lang/python                 sqlite
+dev-lang/python                 sqlite ncurses
 app-arch/p7zip                  rar
 media-gfx/graphicsmagick        imagemagick
 net-dialup/ppp                  ipv6
 net-wireless/wpa_supplicant     ap p2p
+app-crypt/pinentry              gnome-keyring
+app-text/xmlto                  text
 
 # Internationalization
 app-i18n/uim                    -linguas_*

@@ -28,6 +28,9 @@ eselect profile set default/linux/x86/17.0
 
 # echo ">sys-kernel/gentoo-sources-${hsversion}" > /etc/portage/package.mask/kernel
 echo "~sys-kernel/gentoo-sources-${hsversion}" >> /etc/portage/package.accept_keywords
+
+tail /etc/portage/package.accept_keywords
+
 rm -f /etc/portage/savedconfig/*/*-[0-9]*
 
 
@@ -59,7 +62,7 @@ if [ "$1" = fresh  -o  ! -e /usr/src/linux-${kversion}/incremental ]; then
     #                  emerge -q @module-rebuild
     sinfo "Downloading kernel ${kversion}"
     rm -rf /usr/src/linux-${kversion} /lib/modules
-    emerge =sys-kernel/gentoo-sources-${hsversion}
+    emerge =sys-kernel/gentoo-sources-${hsversion} | tee /root/emerge1.log
     # emerge --ask sys-kernel/gentoo-sources
 
 
@@ -67,8 +70,8 @@ if [ "$1" = fresh  -o  ! -e /usr/src/linux-${kversion}/incremental ]; then
     rm -rf /usr/src/linux-{main,kexec}
     mkdir  /usr/src/linux-{main,kexec}
 
-    cp ${HOME}/config/linux-hardened.config       /usr/src/linux-main/.config
-    cp ${HOME}/config/linux-hardened-kexec.config /usr/src/linux-kexec/.config
+    cp ${HOME}/config/linux-main.config       /usr/src/linux-main/.config
+    cp ${HOME}/config/linux-kexec.config /usr/src/linux-kexec/.config
 
     chown -hR bin:bin /usr/src/linux-{main,kexec}
 
@@ -126,20 +129,21 @@ if [ "$1" = fresh  -o  ! -e /usr/src/linux-${kversion}/incremental ]; then
     sinfo "Rebuilding packages that use old libraries"
     emerge -q @preserved-rebuild
 
+    # TODO check this
     # Also rebuild hardened-sources dependencies (#461848)
     emerge -q sys-devel/bc
 
 
     sinfo "Removing non-system packages"
     mv /etc/portage/sets/all{,.off}
-    echo sys-kernel/hardened-sources > /etc/portage/sets/all
+    echo sys-kernel/gentoo-sources-${hsversion} > /etc/portage/sets/all
     emerge -qc
     mv /etc/portage/sets/all{.off,}
 
 
     sinfo "Checking for non-rebuilt packages"
     orphans=`find /var/db/pkg -mindepth 3 -maxdepth 3 -name BUILD_TIME           \
-        ! -path  /var/db/pkg/sys-kernel/hardened-sources-${hsversion}/BUILD_TIME \
+        ! -path  /var/db/pkg/sys-kernel/gentoo-sources-${hsversion}/BUILD_TIME \
         ! -newer /tmp/system-build -printf '%h\n' | sed s:/var/db/pkg/:: | sort`
     if [ -n "${orphans}" ]; then
         sinfo "The following packages were not rebuilt"
@@ -147,6 +151,10 @@ if [ "$1" = fresh  -o  ! -e /usr/src/linux-${kversion}/incremental ]; then
         exit 1
     fi
     rm /tmp/system-build
+
+
+    sinfo "YOLOing so we have sudo later"
+    emerge app-admin/sudo
 
 
     sinfo "Preparing kernel"

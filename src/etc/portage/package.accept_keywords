@@ -1,18 +1,21 @@
 # System
-=app-crypt/gnupg-pkcs11-scd-0.7.3*
+=app-crypt/gnupg-pkcs11-scd-0.9*
 
 # Network
 =net-wireless/reaver-1.4*
 
 # Guest virtualization
-=app-emulation/open-vm-tools-2013.09.16*
-=app-emulation/open-vm-tools-kmod-2013.09.16*
+=app-emulation/open-vm-tools-10*
+=app-emulation/open-vm-tools-kmod-10*
 =app-emulation/virtualbox-guest-additions-4.3.12*
 =x11-drivers/xf86-video-virtualbox-4.3.12*
 =dev-util/kbuild-0.1.9998_pre20131130*
 
 # Removes X dependencies
 =dev-libs/m17n-lib-1.6.3*
+
+# display
+=x11-misc/xcalib-0.9*
 
 # Library-only Javascript for PolKit (#437520, #485910)
 =sys-auth/polkit-0.112*
@@ -21,7 +24,6 @@
 sys-kernel/linux-firmware
 sys-firmware/b43-firmware
 sys-firmware/b43legacy-firmware
-x11-drivers/radeon-ucode
 
 # Compilation failure (#317539)
 =net-wireless/irda-utils-0.9.18*

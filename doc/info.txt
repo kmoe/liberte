@@ -53,8 +53,6 @@ curl                    ssl, gnutls, nss        ssl             cables, gnupg
 wget                    ssl, gnutls             ssl             portage
 
 firefox                 nss                     nss
-claws-mail              gnutls                  gnutls
-libetpan                ssl, gnutls             gnutls          claws-mail
 hexchat                 ssl                     ssl
 
 
@@ -180,5 +178,4 @@ Tor                              (127.0.0.1:9050)
     SSH
     OpenVPN
   torify
-    Claws-Mail
     whois

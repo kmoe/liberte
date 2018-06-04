@@ -29,7 +29,7 @@ net-fs/autofs
 # System / security utilities
 sys-apps/gradm
 app-shells/dash
-app-admin/eselect-sh
+app-admin/eselect
 app-admin/metalog
 app-admin/sudo
 app-misc/hatools
@@ -40,7 +40,7 @@ app-crypt/gnupg
 app-crypt/mcrypt
 app-crypt/sbsigntool
 x11-misc/fpm2
-dev-libs/engine_pkcs11
+dev-libs/libp11
 app-crypt/gnupg-pkcs11-scd
 app-crypt/ccid
 app-crypt/tpm-tools
@@ -53,7 +53,7 @@ net-firewall/iptables
 sys-apps/ethtool
 net-wireless/crda
 net-wireless/rfkill
-net-wireless/aircrack-ng
+# net-wireless/aircrack-ng # now requires python
 net-wireless/reaver
 net-misc/networkmanager
 net-misc/networkmanager-pptp
@@ -62,7 +62,7 @@ net-misc/networkmanager-vpnc
 gnome-extra/nm-applet
 net-misc/ntp
 net-misc/tlsdate
-net-misc/tor
+net-vpn/tor
 net-misc/connect
 net-misc/proxychains
 net-misc/whois
@@ -100,7 +100,6 @@ media-sound/alsa-utils
 media-tv/v4l-utils
 sys-apps/fbset
 media-gfx/fbgrab
-games-util/joystick
 app-misc/joy2key
 net-print/ink
 

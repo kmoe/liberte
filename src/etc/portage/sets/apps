@@ -25,17 +25,12 @@ media-sound/vorbis-tools
 gnome-extra/gucharmap
 app-text/evince
 www-client/firefox
-mail-client/claws-mail
 app-crypt/gpa
 net-irc/hexchat
 
 # Plugins
-mail-client/claws-mail-notification
-mail-client/claws-mail-acpi-notifier
-mail-client/claws-mail-att-remover
-mail-client/claws-mail-archive
-media-plugins/gst-plugins-meta:0.10
-media-plugins/gst-plugins-jpeg:0.10
-media-plugins/gst-plugins-libpng:0.10
-media-plugins/gst-plugins-speex:0.10
-media-plugins/gst-plugins-ximagesrc:0.10
+media-plugins/gst-plugins-meta
+media-plugins/gst-plugins-jpeg
+media-plugins/gst-plugins-libpng
+media-plugins/gst-plugins-speex
+media-plugins/gst-plugins-ximagesrc

@@ -2,7 +2,6 @@
 # (removed in setup-copy)
 
 # Kernel sources and patching tools
-sys-kernel/hardened-sources
 dev-util/patchutils
 
 # Initramfs executables compilation

@@ -5,7 +5,8 @@ dev-libs/elfutils
 sys-apps/man-db
 
 # Prefer media-video/libav + media-libs/libpostproc
-media-video/ffmpeg
+# firefox needs ffmpeg now
+# media-video/ffmpeg
 
 # Prefer media-plugins/gst-plugins-cdio
 media-plugins/gst-plugins-cdparanoia

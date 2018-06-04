@@ -70,7 +70,6 @@
 /usr/share/fc-lang/
 /usr/share/mime/packages/
 /usr/share/themes/*/**
-/usr/share/claws-mail/themes/**
 
 # Temporary directories
 /tmp/**
@@ -131,10 +130,6 @@
 /usr/sbin/atmel_fwl.pl
 # sys-apps/less: LESSCOLOR != 0 + obscure conditions
 /usr/bin/code2color
-# mail-client/claws-mail: external helper scripts
-/usr/lib/claws-mail/tools/*.pl
-/usr/lib/claws-mail/tools/*.py
-/usr/lib/claws-mail/tools/tb2claws-mail
 # dev-libs/libevent: marshaling code generator
 /usr/bin/event_rpcgen.py
 # net-misc/rsync: non-essential auxiliary scripts

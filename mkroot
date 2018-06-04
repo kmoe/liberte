@@ -108,6 +108,23 @@ sinfo "yoloing GPG keys for now - need subkeys"
 #     fi
 # done
 
+for key in ${gpg_keys}; do
+    org=`echo ${key} | cut -d: -f1`
+    fpr=`echo ${key} | cut -d: -f2`
+    keyid=`echo -n ${fpr} | tail -c -8`
+
+    gpg -q --homedir ${LIVECD}/mirror/gnupg --no-default-keyring \
+            --keyring ${org}.gpg --import ${FROM}/conf/certs/${org}-${keyid}.asc
+
+    fpr2=`gpg -q --homedir ${LIVECD}/mirror/gnupg --keyring ${org}.gpg \
+                  --fingerprint --with-colons 0x${fpr} | sed -n '/^fpr:/p' | cut -d: -f10`
+    if [ ${fpr} != "${fpr2}" ]; then
+        echo "Fingerprint mismatch: [${fpr}] != [${fpr2}]"
+        echo "MASSIVE YOLO - REMOVE"
+    fi
+done
+
+
 
 sinfo "Verifying stage3 and portage snapshot PGP signatures"
 gpg -q --homedir ${LIVECD}/mirror/gnupg --trust-model always --keyring gentoo.gpg \

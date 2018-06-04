@@ -1,0 +1,48 @@
+Preparing kernel
++ /root/helpers/gen-kernel prepare
++ cmd=prepare
++ bver=KBUILD_BUILD_VERSION=0
+++ date -u +%F
++ bts=KBUILD_BUILD_TIMESTAMP=2018-05-30
++ buser=KBUILD_BUILD_USER=liberte
++ bhost=KBUILD_BUILD_HOST=dee.su
++ sbdir=/usr/local/addons/secureboot
++ sb_kmod=/usr/local/addons/secureboot/Liberte-SecureBoot-Kernel-1
++ sighash=sha256
++ kernsrc=/usr/src/linux-4.16.9-gentoo
++ mainobj=/usr/src/linux-main
++ kexecobj=/usr/src/linux-kexec
++ mainimg=/boot/kernel-x86.zi
++ mainmod=/lib/modules/4.16.9-gentoo
++ initrd=/usr/local/addons/initrd/initrd-x86.cpio
++ kexecimg=/usr/local/boot/kernel-kexec.zi
++ bzimage=arch/x86/boot/bzImage
++ fwpath=/usr/local/addons/shipped-fw
+++ portageq envvar MAKEOPTS
++ makeopts=-j3
++ rmake='make -j3 -C /usr/src/linux-4.16.9-gentoo KBUILD_BUILD_VERSION=0 KBUILD_BUILD_TIMESTAMP=2018-05-30 KBUILD_BUILD_USER=liberte KBUILD_BUILD_HOST=dee.su'
++ make='sudo -n -u bin make -j3 -C /usr/src/linux-4.16.9-gentoo KBUILD_BUILD_VERSION=0 KBUILD_BUILD_TIMESTAMP=2018-05-30 KBUILD_BUILD_USER=liberte KBUILD_BUILD_HOST=dee.su'
++ '[' '!' -e /usr/src/linux-main/signing_key.x509 ']'
++ ln -s /usr/local/addons/secureboot/Liberte-SecureBoot-Kernel-1.der /usr/src/linux-main/signing_key.x509
++ ln -s /usr/local/addons/secureboot/Liberte-SecureBoot-Kernel-1.key /usr/src/linux-main/signing_key.priv
++ touch -d 1970-01-01 /usr/src/linux-main/x509.genkey
++ chown -h bin:bin /usr/src/linux-main/signing_key.x509 /usr/src/linux-main/signing_key.priv /usr/src/linux-main/x509.genkey
++ '[' prepare = prepare ']'
++ su - -s /bin/sh bin -c 'make -j3 -C /usr/src/linux-4.16.9-gentoo KBUILD_BUILD_VERSION=0 KBUILD_BUILD_TIMESTAMP=2018-05-30 KBUILD_BUILD_USER=liberte KBUILD_BUILD_HOST=dee.su O=/usr/src/linux-main modules_prepare'
+make: Entering directory '/usr/src/linux-4.16.9-gentoo'
+make: Leaving directory '/usr/src/linux-4.16.9-gentoo'
++ retval=2
++ '[' 2 '!=' 0 ']'
++ sinfo Failed.
++ echo -e '\033[1;33;41mFailed.\033[0m'
+Failed.
++ sinfo 'Unmounting system directories'
++ echo -e '\033[1;33;41mUnmounting system directories\033[0m'
+Unmounting system directories
++ '[' src = src ']'
++ umount /home/root/gen2/src/mnt/live /home/root/gen2/src/mnt/boot
++ umount -l /home/root/gen2/src/dev/loop /home/root/gen2/src/dev/shm /home/root/gen2/src/dev/pts /home/root/gen2/src/dev/ptmx /home/root/gen2/src/dev/tty /home/root/gen2/src/dev/urandom /home/root/gen2/src/dev/random /home/root/gen2/src/dev/null /home/root/gen2/src/proc
++ '[' '!' -f /home/root/gen2/src ']'
++ exit 2
+[root@librem liberte]# 
+
