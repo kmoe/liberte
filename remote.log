@@ -1,0 +1,47 @@
+ * 
+
+ * Messages for package sys-devel/gcc-6.4.0-r1:
+ * Log file: /var/log/portage/sys-devel:gcc-6.4.0-r1:20180605-144530.log.gz
+
+ * If you have issues with packages unable to locate libstdc++.la,
+ * then try running 'fix_libtool_files.sh' on the old gcc versions.
+ * You might want to review the GCC upgrade guide when moving between
+ * major versions (like 4.2 to 4.3):
+ * https://wiki.gentoo.org/wiki/Upgrading_GCC
+
+ * Messages for package dev-lang/python-3.5.5:
+ * Log file: /var/log/portage/dev-lang:python-3.5.5:20180605-153352.log.gz
+
+ * configure has detected that the sem_open function is broken.
+ * Please ensure that /dev/shm is mounted as a tmpfs with mode 1777.
+ * ERROR: dev-lang/python-3.5.5::gentoo failed (configure phase):
+ *   Broken sem_open function (bug 496328)
+ * 
+ * Call stack:
+ *     ebuild.sh, line 124:  Called src_configure
+ *   environment, line 3552:  Called die
+ * The specific snippet of code:
+ *           die "Broken sem_open function (bug 496328)";
+ * 
+ * If you need support, post the output of `emerge --info '=dev-lang/python-3.5.5::gentoo'`,
+ * the complete build log and the output of `emerge -pqv '=dev-lang/python-3.5.5::gentoo'`.
+ * The complete build log is located at '/var/log/portage/dev-lang:python-3.5.5:20180605-153352.log.gz'.
+ * For convenience, a symlink to the build log is located at '/var/tmp/portage/dev-lang/python-3.5.5/temp/build.log.gz'.
+ * The ebuild environment file is located at '/var/tmp/portage/dev-lang/python-3.5.5/temp/environment'.
+ * Working directory: '/var/tmp/portage/dev-lang/python-3.5.5/work/i686-pc-linux-gnu'
+ * S: '/var/tmp/portage/dev-lang/python-3.5.5/work/Python-3.5.5'
++ retval=1
++ '[' 1 '!=' 0 ']'
++ sinfo Failed.
++ echo -e '\033[1;33;41mFailed.\033[0m'
+Failed.
++ sinfo 'Unmounting system directories'
++ echo -e '\033[1;33;41mUnmounting system directories\033[0m'
+Unmounting system directories
++ '[' src = src ']'
++ umount /ffffuq/k/gen//src/mnt/live /ffffuq/k/gen//src/mnt/boot
++ umount -l /ffffuq/k/gen//src/dev/loop /ffffuq/k/gen//src/dev/shm /ffffuq/k/gen//src/dev/pts /ffffuq/k/gen//src/dev/ptmx /ffffuq/k/gen//src/dev/tty /ffffuq/k/gen//src/dev/urandom /ffffuq/k/gen//src/dev/random /ffffuq/k/gen//src/dev/null /ffffuq/k/gen//src/proc
++ '[' '!' -f /ffffuq/k/gen//src ']'
++ exit 1
+[root@ffffffffffffffff liberte]# 
+

@@ -137,7 +137,8 @@ if [ "$1" = fresh  -o  ! -e /usr/src/linux-${kversion}/incremental ]; then
     sinfo "Removing non-system packages"
     mv /etc/portage/sets/all{,.off}
     echo sys-kernel/gentoo-sources-${hsversion} > /etc/portage/sets/all
-    emerge -qc
+    sinfo "YOLOing this because it removes kernel for some reason"
+    # emerge -qc
     mv /etc/portage/sets/all{.off,}
 
 
@@ -195,7 +196,8 @@ eselect news purge
 
 
 sinfo "Removing unnecessary packages"
-emerge -qc
+sinfo "YOLOing again for now"
+# emerge -qc
 
 
 sinfo "Performing package move updates"

@@ -99,7 +99,7 @@ app-arch/p7zip                  rar
 media-gfx/graphicsmagick        imagemagick
 net-dialup/ppp                  ipv6
 net-wireless/wpa_supplicant     ap p2p
-app-crypt/pinentry              gnome-keyring
+app-crypt/pinentry              -gnome-keyring -gtk
 app-text/xmlto                  text
 
 # Internationalization
