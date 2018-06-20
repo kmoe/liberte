@@ -1,36 +1,14 @@
 # User-level applications
 
 # Configuration
-gnome-base/dconf
 x11-misc/xdg-utils
 x11-misc/xdg-user-dirs
 
 # Text utilities
 app-text/tree
 sys-apps/less
-app-editors/nano
-app-editors/hexedit
+app-editors/vim
 sys-devel/bc
 
 # Applications
-gnome-extra/zenity
-x11-terms/sakura
-x11-misc/pcmanfm
-app-cdr/cdrtools
-media-gfx/gpicview
-media-gfx/graphicsmagick
-media-sound/sox
-media-sound/mpg123
-media-sound/vorbis-tools
-gnome-extra/gucharmap
-app-text/evince
 www-client/firefox
-app-crypt/gpa
-net-irc/hexchat
-
-# Plugins
-media-plugins/gst-plugins-meta
-media-plugins/gst-plugins-jpeg
-media-plugins/gst-plugins-libpng
-media-plugins/gst-plugins-speex
-media-plugins/gst-plugins-ximagesrc

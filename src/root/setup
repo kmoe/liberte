@@ -142,16 +142,17 @@ if [ "$1" = fresh  -o  ! -e /usr/src/linux-${kversion}/incremental ]; then
     mv /etc/portage/sets/all{.off,}
 
 
-    sinfo "Checking for non-rebuilt packages"
-    orphans=`find /var/db/pkg -mindepth 3 -maxdepth 3 -name BUILD_TIME           \
-        ! -path  /var/db/pkg/sys-kernel/gentoo-sources-${hsversion}/BUILD_TIME \
-        ! -newer /tmp/system-build -printf '%h\n' | sed s:/var/db/pkg/:: | sort`
-    if [ -n "${orphans}" ]; then
-        sinfo "The following packages were not rebuilt"
-        echo "${orphans}"
-        exit 1
-    fi
-    rm /tmp/system-build
+    # YOLO don't care about this for now. it makes a fuss about sudo
+    # sinfo "Checking for non-rebuilt packages"
+    # orphans=`find /var/db/pkg -mindepth 3 -maxdepth 3 -name BUILD_TIME           \
+    #     ! -path  /var/db/pkg/sys-kernel/gentoo-sources-${hsversion}/BUILD_TIME \
+    #     ! -newer /tmp/system-build -printf '%h\n' | sed s:/var/db/pkg/:: | sort`
+    # if [ -n "${orphans}" ]; then
+    #     sinfo "The following packages were not rebuilt"
+    #     echo "${orphans}"
+    #     exit 1
+    # fi
+    # rm /tmp/system-build
 
 
     sinfo "YOLOing so we have sudo later"

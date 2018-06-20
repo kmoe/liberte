@@ -90,7 +90,6 @@ sys-devel/binutils              cxx
 www-client/firefox              custom-cflags custom-optimization
 #media-video/libav               custom-cflags cpudetection 3dnow 3dnowext ssse3 avx
 sys-fs/udev                     gudev
-gnome-base/librsvg              tools
 dev-util/strace                 aio
 app-portage/eix                 strong-security
 dev-db/sqlite                   secure-delete
