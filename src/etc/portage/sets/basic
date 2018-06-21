@@ -57,9 +57,7 @@ net-wireless/rfkill
 net-wireless/reaver
 net-misc/networkmanager
 net-misc/networkmanager-pptp
-net-misc/networkmanager-openvpn
 net-misc/networkmanager-vpnc
-gnome-extra/nm-applet
 net-misc/ntp
 net-misc/tlsdate
 net-vpn/tor
