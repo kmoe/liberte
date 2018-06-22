@@ -55,9 +55,6 @@ net-wireless/crda
 net-wireless/rfkill
 # net-wireless/aircrack-ng # now requires python
 net-wireless/reaver
-net-misc/networkmanager
-net-misc/networkmanager-pptp
-net-misc/networkmanager-vpnc
 net-misc/ntp
 net-misc/tlsdate
 net-vpn/tor
