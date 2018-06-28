@@ -8,7 +8,7 @@
 =app-emulation/open-vm-tools-10*
 =app-emulation/open-vm-tools-kmod-10*
 =app-emulation/virtualbox-guest-additions-4.3.12*
-=x11-drivers/xf86-video-virtualbox-4.3.12*
+=x11-drivers/xf86-video-vboxvideo-1.0.0*
 =dev-util/kbuild-0.1.9998_pre20131130*
 
 # Removes X dependencies

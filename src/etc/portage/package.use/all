@@ -25,9 +25,6 @@ app-text/poppler                cairo
 # [xf86-video-virtualbox[dri] conflicts w/ mprotect]
 media-libs/mesa                 xa gbm
 x11-libs/libdrm                 libkms
-x11-drivers/xf86-video-virtualbox -dri
-app-emulation/open-vm-tools     -X
-app-emulation/open-vm-tools-kmod vmhgfs
 x11-base/xorg-drivers           -video_cards_nv
 
 # Networking, including SSL/TLS

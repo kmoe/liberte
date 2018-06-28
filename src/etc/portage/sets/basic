@@ -101,3 +101,4 @@ net-print/ink
 # Virtualization
 app-emulation/open-vm-tools
 app-emulation/virtualbox-guest-additions
+x11-drivers/xf86-video-vboxvideo
