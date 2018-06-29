@@ -12,7 +12,7 @@ app-text/hunspell               -ncurses
 sys-devel/gettext               -ncurses
 sys-fs/lvm2                     -readline
 sys-apps/gawk                   -readline
-dev-libs/libpcre                -readline
+dev-libs/libpcre2                -readline
 dev-libs/libxml2                -readline
 dev-db/sqlite                   -readline
 app-i18n/uim                    gtk3

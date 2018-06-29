@@ -99,6 +99,5 @@ app-misc/joy2key
 net-print/ink
 
 # Virtualization
-app-emulation/open-vm-tools
-app-emulation/virtualbox-guest-additions
+app-emulation/virtualbox
 x11-drivers/xf86-video-vboxvideo
