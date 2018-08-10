@@ -2,7 +2,6 @@
 
 luser=anon
 nofw=nofw
-cable=cable
 
 # ReachableAddresses ports in /etc/tor/torrc [uid=tor]
 # (allow high ports in order to support most bridges)
@@ -95,7 +94,6 @@ iptables -A OUTPUT       -p tcp                               --syn -d 127.0.0.1
 
 # Privoxy access only for main user and cables daemon
 iptables -A OUTPUT -o lo -p tcp -m owner --uid-owner ${luser} --syn -d 127.0.0.1 --dport 8118 -j ACCEPT
-iptables -A OUTPUT -o lo -p tcp -m owner --uid-owner ${cable} --syn -d 127.0.0.1 --dport 8118 -j ACCEPT
 iptables -A OUTPUT       -p tcp                               --syn -d 127.0.0.1 --dport 8118 -j LOGREJECT
 
 # Tor access via SOCKS only for main user and Privoxy

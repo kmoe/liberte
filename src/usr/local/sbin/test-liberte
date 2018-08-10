@@ -34,8 +34,8 @@ if [ `id -u` != 0  -o  `id -g` != 0 ]; then
     exit 1
 fi
 
-if ! /etc/init.d/tor -q status || ! /etc/init.d/cabled -q status; then
-    echo "Tor and cables daemons must be running"
+if ! /etc/init.d/tor -q status; then
+    echo "Tor daemon must be running"
     exit 1
 fi
 
@@ -43,9 +43,6 @@ fi
 webhost=torproject.org
 webip=38.229.72.16
 onionhost=3g2upl4pq6kufc4m.onion
-
-ccuser=`cat /home/anon/persist/security/cable/certs/username`
-cctor=`cat /home/anon/persist/security/tor/hidden_service/hostname`
 
 
 # Check that wireless MAC addresses were changed
@@ -99,37 +96,6 @@ stest fail "Access Tor control port as root"                       nc -q 0 127.0
 stest fail "Access Tor control port as anon"       sudo -n -u anon nc -q 0 127.0.0.1 9051
 stest pass "Access Tor control port as tor"        sudo -n -u tor  nc -q 0 127.0.0.1 9051
 stest pass "Invoke tor-ctrl"                       sudo -n -u tor  tor-ctrl status
-
-
-# Cables communication service server access
-stest fail "Fetch CC service as root"                              curl -fsSI -x "" 127.0.0.1:9080/${ccuser}/request/ver
-stest fail "Fetch CC service as anon"              sudo -n -u anon curl -fsSI -x "" 127.0.0.1:9080/${ccuser}/request/ver
-stest fail "Fetch CC service as nofw"              sudo -n -u anon curl -fsSI -x "" 127.0.0.1:9080/${ccuser}/request/ver
-stest pass "Fetch CC service as tor"               sudo -n -u tor  curl -fsSI -x "" 127.0.0.1:9080/${ccuser}/request/ver
-
-# Cables communication ping
-stest pass "CC-ping @tor as anon"                  sudo -n -u anon cable-ping ${ccuser}@${cctor}
-
-# Cables communication mail sending
-ccsend() {
-    local desc="$1"
-    local from="$2"
-    local to1="$3"
-
-    cable-send <<EOF
-From: Anon Anon <${from}>
-To: Anon Anon <${to1}>
-Subject: Test (${desc})
-
-Test
-EOF
-}
-
-stest pass "Send cable to self (Tor -> Tor)" ccsend "Tor -> Tor" ${ccuser}@${cctor} ${ccuser}@${cctor}
-stest fail "Bogus cable host"                ccsend "Bogus"      ${ccuser}@bogus    ${ccuser}@${cctor}
-stest fail "Bogus cable username"            ccsend "Bogus"      ${ccuser}@${cctor} bogus@${cctor}
-echo "NOTE: 2 messages should be delivered to user mailbox"
-
 
 # Done
 stest pass "Done" :

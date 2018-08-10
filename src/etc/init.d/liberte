@@ -39,8 +39,6 @@ eprompt() {
 # Variables
 luser=anon
 lgroup=legion
-cuser=cable
-cgroup=cable
 lmount=/home/${luser}/persist
 boot=/mnt/boot
 live=/mnt/live
@@ -180,21 +178,14 @@ start() {
         rsync -x -rlpgo --ignore-existing               ${live}${lmount}/ ${lmount}
 
         # ownership
-        find ${lmount} -xdev -path ${lmount}/cables -prune -o \
+        find ${lmount} -xdev \
             ! \( -user ${luser} -group ${lgroup} \) -print0   \
             | xargs -0r chown -h ${luser}:${lgroup} --
-        find ${lmount}/cables -xdev -mindepth 2 ! \( -user ${cuser} -group ${cgroup} \) -print0 \
-            | xargs -0r chown -h ${cuser}:${cgroup} --
 
         # permissions (sloppy w.r.t dirs, but rsync takes care of dirs that matter)
         find ${lmount} -xdev -perm /6007 -type d -print0 | xargs -0r chmod ug-s,o-rwx --
-        find ${lmount} -xdev -path ${lmount}/security/cable -prune -o \
+        find ${lmount} -xdev \
             -perm /7077 ! -type d ! -type l -print0 | xargs -0r chmod go=,u-s --
-
-        # cables certs permissions
-        find ${lmount}/security/cable -xdev ! -perm 710 -type d -print0 | xargs -0r chmod 710 --
-        find ${lmount}/security/cable -xdev ! -perm 640 ! -type d ! -type l -print0 \
-            | xargs -0r chmod 640 --
 
         eend $?
     fi

@@ -86,11 +86,7 @@ else
     # rwX------
     ${RSYNC} --chmod=u=rwX,go=   -i --delete \
           --exclude=/anon/persist/security/pgp/\*.gpg --exclude=/anon/persist/security/pgp/\*.crt \
-          --exclude=/anon/persist/cables/queue        --exclude=/anon/persist/cables/rqueue       \
           --exclude=/anon/persist/mail/inbox          -C ${SRC}/home/anon ${LIVECD}/home
-    ${RSYNC} --chmod=ug=rwX,o=,Do+t -i --delete-excluded \
-        -C ${SRC}/home/anon/persist/cables/queue ${SRC}/home/anon/persist/cables/rqueue \
-        ${LIVECD}/home/anon/persist/cables
     ${RSYNC} --chmod=ug=rwX,o=,Do+t -i --delete-excluded \
         -C ${SRC}/home/anon/persist/mail/inbox   ${LIVECD}/home/anon/persist/mail
     chown -hR --from=0:0 2101:9000 ${LIVECD}/home/anon

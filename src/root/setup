@@ -396,7 +396,6 @@ useradd -u 2102 -g nofw   -c "Non-firewalled"       -d /home/nofw -s /sbin/nolog
 
 # "vmware" disabled (#474636)
 usermod -G wheel,plugdev,games,vboxguest anon
-usermod -G legion                        cable
 
 useradd -c slay    -d /dev/null -s /sbin/nologin -r slay || [ $? = 9 ]
 
