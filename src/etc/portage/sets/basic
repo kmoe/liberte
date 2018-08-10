@@ -28,13 +28,12 @@ net-fs/autofs
 
 # System / security utilities
 sys-apps/gradm
-app-shells/dash
 app-admin/eselect
 app-admin/metalog
 app-admin/sudo
 app-misc/hatools
 x11-misc/alock
-net-misc/ssh-askpass-fullscreen
+#net-misc/ssh-askpass-fullscreen
 sys-fs/cryptsetup
 app-crypt/gnupg
 app-crypt/mcrypt
@@ -53,7 +52,7 @@ net-firewall/iptables
 sys-apps/ethtool
 net-wireless/crda
 net-wireless/rfkill
-# net-wireless/aircrack-ng # now requires python
+net-wireless/aircrack-ng # now requires python
 net-wireless/reaver
 net-misc/ntp
 net-misc/tlsdate
@@ -64,7 +63,6 @@ net-misc/whois
 net-proxy/torsocks
 # net-proxy/obfsproxy
 net-proxy/privoxy
-net-mail/cables
 
 # Peripheral utilities
 sys-apps/irqbalance
