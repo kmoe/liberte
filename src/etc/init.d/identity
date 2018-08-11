@@ -8,14 +8,11 @@ live=/mnt/live
 
 torrc=/etc/tor/torrc
 ltordir=${lmount}/security/tor/hidden_service
-certsdir=${lmount}/security/cable/certs
 gtordir=/var/lib/tor/hidden_service
 
-# certdate should be legal, and also recent to allow
-# for migration of v1.0 cables certificates
+# certdate should be legal, and also recent YOLO
 gentorhost=gen-tor-hostname
-genuser=gen-cable-username
-certdate=2012-06-16
+certdate=2018-08-10
 
 
 depend() {
@@ -83,29 +80,6 @@ start() {
             && chown -hR tor:tor ${gtordir}
         eend $?
     fi
-
-
-    # Create (big) private key + communication certificates + username
-    if [ ! -e ${certsdir} ]  &&  mountpoint -q ${lmount}; then
-        echo
-        ebegin Generating communication certificates
-        einfo 'It is a one-time operation - please do not interrupt'
-        echo
-
-        # input_begin
-
-        # Temporarily fix the date while generating certificates, otherwise
-        # the certificates might be generated with an invalid (future) date
-        curdate=`date -u +'%F %T'`
-        date -us "${certdate}" 1>/dev/null
-        sudo -n -u ${luser} ${genuser}
-
-        eend $?
-        date -us "${curdate} `date -u +-%H%M`" 1>/dev/null
-
-        # input_end
-    fi
-
 
     # Randomize endings of wireless interfaces MAC addresses
     if ! get_bootparam 'noanon'; then

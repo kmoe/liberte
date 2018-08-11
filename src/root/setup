@@ -321,7 +321,7 @@ sinfo "Configuring start-up services"
 svcsysinit="udev kmod-static-nodes"
 svcboot="consolefont irqbalance haveged metalog
          iptables consolekit lockdown"
-svcdefault="liberte identity cabled persist xconfig vmconfig spindown
+svcdefault="liberte identity persist xconfig vmconfig spindown
             acpid smartd laptop_mode gpm
             autofs NetworkManager privoxy"
 svcshutdown="memwipe"
